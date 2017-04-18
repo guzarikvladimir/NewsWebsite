@@ -1,0 +1,5 @@
+C:\Users\Sacris\Desktop\NewsWebsite\Service.Interfaces\bin\Debug\Service.Interfaces.dll
+C:\Users\Sacris\Desktop\NewsWebsite\Service.Interfaces\bin\Debug\Service.Interfaces.pdb
+C:\Users\Sacris\Desktop\NewsWebsite\Service.Interfaces\obj\Debug\Service.Interfaces.dll
+C:\Users\Sacris\Desktop\NewsWebsite\Service.Interfaces\obj\Debug\Service.Interfaces.pdb
+C:\Users\Sacris\Desktop\NewsWebsite\Service.Interfaces\obj\Debug\Service.Interfaces.csprojResolveAssemblyReference.cache

@@ -1,0 +1,36 @@
+﻿@using NewsWebsite.Models
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Home", "List", "Home")</li>
+        <li class="dropdown">
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">Sections</a>
+            <ul id="login-dp" class="dropdown-menu">
+                <li>@Html.ActionLink("All", "List", "Home")</li>
+                <li>@Html.Action("Menu", "Nav")</li>
+            </ul>
+        </li>
+        @if (User.IsInRole("Admin"))
+        {
+            <li>@Html.ActionLink("Administer", "Index", "Admin")</li>
+        }
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+        @if (Request.IsAuthenticated)
+        {
+            <li><a href=""><b>Hello, @User.Identity.Name!</b></a></li>
+            <li>@Html.ActionLink("Log off", "LogOff", "Account")</li>
+        }
+        else
+        {
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><b>Login</b></a>
+                <ul id="login-dp" class="dropdown-menu">
+                    <li>
+                        @Html.Partial("LoginPartial", new LoginViewModel())
+                    </li>
+                </ul>
+            </li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,54 @@
+﻿@model Service.Interfaces.Entities.NewsEntity
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div>
+    @if (Model.Id != 0)
+    {
+        <h4>Редактирование новости «@Model.Name»</h4>
+    }
+    else
+    {
+        <h4>Создание новости</h4>
+    }
+
+    @using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new {enctype = "multipart/form-data"}))
+    {
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name, new {@class = "form-control"})
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Description)
+            @Html.TextAreaFor(m => m.Description, new {@class = "form-control", rows = 10})
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Category)
+            @Html.DropDownListFor(m => m.CategoryId, ViewBag.Categories as SelectList, new {@class = "form-control"})
+            <div>
+                <small id="remark">if the desired category is not in the list input new category in the field below, else leave it empty</small>
+                @Html.TextBoxFor(m => m.Category, new { @class = "form-control input-sm", style = "width:auto" })
+            </div>
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.ImageData)
+            <input id="imgInput" type="file" name="image"/>
+            @if (Model.ImageData != null)
+            {
+                <img id="image" src="data:\@Model.ImageMimeType;base64,@Convert.ToBase64String(Model.ImageData)" />
+            }
+            else
+            {
+                <img id="image" src="#" />
+            }
+        </div>
+        <br>
+        <input type="submit" value="Сохранить" class="btn btn-primary"/>
+        @Html.ActionLink("Отменить изменения и вернуться к списку", "Index", null, new {@class = "btn btn-default"})
+    }
+</div>

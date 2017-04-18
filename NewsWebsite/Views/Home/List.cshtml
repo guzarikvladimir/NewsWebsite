@@ -1,0 +1,16 @@
+﻿@model List<Service.Interfaces.Entities.NewsEntity>
+
+@{
+    ViewBag.Title = "List";
+}
+
+@Html.Partial("SearchPartial")
+<div class="row row-offcanvas row-offcanvas-right">
+    <div class="row">
+        <p id="category" style="visibility: hidden;">@ViewBag.SelectedCategory</p>
+        <div id="scrolList">
+            @Html.Partial("Items", Model)
+        </div>
+        <div id="loading"><img src='@Url.Content("~/Content/spinners/loading1.gif")'/></div>
+    </div>
+</div>

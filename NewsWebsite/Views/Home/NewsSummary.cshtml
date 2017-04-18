@@ -1,0 +1,9 @@
+﻿@model Service.Interfaces.Entities.NewsEntity
+
+@if (Model.ImageData != null)
+{
+    @Html.Raw("<img src=\"data:" + Model.ImageMimeType + ";base64,"
+                                + Convert.ToBase64String(Model.ImageData) + "\" />")
+}
+
+@Html.ActionLink(Model.Name, "About", new { controller = "Home", newsId = Model.Id })

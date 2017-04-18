@@ -1,0 +1,162 @@
+﻿body {
+
+}
+
+.body-content {
+    
+}
+
+/* ADMIN */
+
+.container input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+#remark {
+    color: red;
+}
+
+/* !ADMIN */
+
+/* NEWS BOX */
+
+.news-box {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 230px;
+    overflow: hidden;
+}
+
+.news-box img {
+    position: relative;
+    max-width: 100%;
+}
+
+.news-box a:hover {
+    text-decoration: none;
+    color: red;
+}
+.news-box a:visited {
+    color: #4b0082;
+}
+
+.jumbotron img {
+    position: relative;
+    max-width: 100%;
+}
+
+/* !NEWS BOX */
+
+/* NAVBAR */
+
+.nav .form-inline {
+    margin: 7px 0;
+}
+
+.nav .form-inline input {
+    display: inline;
+}
+
+.dropdown:hover > .dropdown-menu { 
+    display: block; 
+} 
+/* !NAVBAR */
+
+/* SEARCH */
+
+#imaginary_container{
+    margin: 0 0 20px 0;
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+/* !SEARCH */
+
+/* SPINNER */
+
+#loading {
+    width: 100%;
+    text-align: center;
+}
+#loading img {
+    width: 100px;
+    text-align: center;
+}
+
+/* !SPINNER */
+
+/* COMMENTS */
+
+#comments > h5 {
+    margin: 0;
+    padding: 20px 0 10px 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+.comment p:first-child {
+    display: inline;
+    font-weight: bold;
+}
+.comment {
+    margin: 10px 0;
+}
+.comment a {
+    float: right;
+    margin-bottom: 20px
+}
+#postComment > h4 {
+    margin-bottom: 0;
+}
+#postComment .btn {
+    width: 100%;
+}
+#denyPostComment {
+    margin: 20px 0 0 0;
+    font-style: italic;
+}
+/* !COMMENTS */
+
+/* ABOUT */
+#newsId {
+    height: 0;
+}
+#about p {
+    color: gray;
+}
+#about img {
+    display: block;
+    margin: 10px 0;
+    max-width: 100%;
+}
+/* !ABOUT */
+
+#moveTop {
+    display: inline;
+    position: fixed;
+    width: 80px;
+    background: #f5f5f5;
+    border-radius: 20px 0 0 20px;
+    margin-left: 96%;
+    margin-top: 20%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+    visibility: hidden;
+}
+#moveTop img {
+    width: 40px;
+}
+
+#image {
+    width: 25%;
+}

@@ -1,0 +1,25 @@
+﻿@using NewsWebsite.Models
+@using Service.Interfaces.Entities
+@model NewsEntity
+
+@{
+    ViewBag.Title = "About";
+}
+<div id="about">
+    <div id="newsId" style="visibility: hidden;">@Model.Id</div>
+    <h2>@Model.Name</h2>
+    <p>@Model.CreationDate.ToShortDateString() at @Model.CreationTime.Hours:@Model.CreationTime.Minutes</p>
+    @if (Model.ImageData != null)
+    {
+        @Html.Raw("<img src=\"data:" + Model.ImageMimeType + ";base64,"
+                                + Convert.ToBase64String(Model.ImageData) + "\" />")
+    }
+    <div style="text-align: justify;">@Html.Raw(Model.Description)</div>
+</div>
+
+
+@Html.Partial("PostComment", new CommentViewModel() { NewsId = Model.Id })
+
+<div id="comments">
+    @Html.Partial("_Comments", Model.Comments)
+</div>

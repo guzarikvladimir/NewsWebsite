@@ -1,0 +1,30 @@
+﻿@model List<Service.Interfaces.Entities.CommentEntity>
+
+<h5>
+    @if (Model.Count == 0)
+    {
+        @:No comments
+        }
+    else if (Model.Count == 1)
+    {
+        @: 1 comment
+        }
+    else
+    {
+        @Model.Count @:comments
+        }
+</h5>
+
+@foreach (var com in Model)
+{
+    <div class="comment">
+        
+        <p>@com.UserName</p> left @com.CreationDate.ToShortDateString() at @com.CreationTime.Hours:@com.CreationTime.Minutes
+        @if (User.IsInRole("Admin"))
+        {
+            @Ajax.ActionLink("Remove", "Delete", new { controller = "Comments", commentId = com.Id, newsId = com.NewId },
+                new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "comments" })
+        }
+        <p>@com.Name</p>
+    </div>
+}

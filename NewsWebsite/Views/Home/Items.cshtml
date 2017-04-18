@@ -1,0 +1,9 @@
+﻿@using Service.Interfaces.Entities
+@model List<NewsEntity>
+
+@foreach (NewsEntity m in Model)
+{
+    <div class="col-12 col-sm-3 col-lg-2 col-md-3 col-xs-4 news-box">
+        @Html.Partial("NewsSummary", m)
+    </div>
+}
